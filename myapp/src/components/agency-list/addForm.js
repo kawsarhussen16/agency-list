@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addAgency } from "../../Redux/actions/agencies";
+import "./addForm.style.scss";
+
 const initialState = {
      name: "",
      location: "",
@@ -40,16 +42,18 @@ class AddAgency extends React.Component {
      }
      render() {
           return (
-               <form>
-                    <h4>Create a new Agency</h4>
-                    <label> Agency Name:
-                              <input name="name" type="text" value={this.state.name} onChange={this.handleChange} />
-                    </label>
-                    <label> Agency Location:
-                              <input name="location" type="text" value={this.state.location} onChange={this.handleChange} />
-                    </label>
-                    <button className="button-primary"
-                         type="submit" disabled={this.validateForm()} onClick={this.createNewAgency}>Add</button>
+               <form className="add-agency-form">
+                    <h5>Create a new Agency</h5>
+                    <div className="add-agency-form-item">
+                         <label>
+                              <input className="input-box" name="name" type="text" value={this.state.name} placeholder="Agency Name" onChange={this.handleChange} />
+                         </label>
+                         <label>
+                              <input className="input-box" name="location" type="text" value={this.state.location} placeholder="Agency Location" onChange={this.handleChange} />
+                         </label>
+                         <button className="btn button-primary"
+                              type="submit" disabled={this.validateForm()} onClick={this.createNewAgency}>Add</button>
+                    </div>
                </form>
           )
      }

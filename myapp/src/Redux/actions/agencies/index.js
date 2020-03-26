@@ -11,6 +11,6 @@ export function deleteAgencyData(index) {
      return { type: DELETE_AGENCY_DATA, payload: index }
 }
 
-export function updateAgencyData(updatedData) {
-     return { type: UPDATE_AGENCY_DATA, payload: updatedData }
+export function updateAgencyData(id, updatedData) {
+     return { type: UPDATE_AGENCY_DATA, payload: { id, updatedData } }
 } 

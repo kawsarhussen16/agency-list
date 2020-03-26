@@ -1,9 +1,10 @@
 import React from 'react';
+import "./index.style.scss";
 
-const DisplayData = ({ agency, deleteAgency }) => {
+const DisplayData = ({ agency, deleteAgency, updateAgency }) => {
      let { id, name, location } = agency;
      return (
-          <div key={id}>
+          <div className="agency-list-item" key={id}>
                <div>
                     <h4 >
                          Agency: {name}
@@ -14,10 +15,10 @@ const DisplayData = ({ agency, deleteAgency }) => {
 
                </div>
                <div>
-                    <button onClick={() => deleteAgency(id)}>
+                    <button className="btn" onClick={() => deleteAgency(id)}>
                          Delete
                     </button>
-                    <button>
+                    <button className="btn" onClick={() => updateAgency(agency)}>
                          Update
                     </button>
                </div>

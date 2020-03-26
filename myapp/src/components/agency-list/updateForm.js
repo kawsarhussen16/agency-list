@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { updateAgencyData } from "../../Redux/actions/agencies";
-
+import "./addForm.style.scss";
 class UpdateAgency extends Component {
      state = {
           name: "",
           location: "",
      };
+     componentDidMount() {
+          let { name, location } = this.props.currentData;
+          this.setState({ name, location })
+     }
+
      handleInput = e => {
           this.setState({ [e.target.name]: e.target.value });
      };
@@ -20,41 +25,52 @@ class UpdateAgency extends Component {
           const isInvalid = !name || !location;
           return isInvalid;
      };
-     UpdateAgency = () => {
+     updateAgency = (e) => {
+          e.preventDefault();
           const updatedData = this.state;
-          let id = this.props.id;
+          let id = this.props.currentData.id;
           this.props.updateAgencyData(id, updatedData)
+     }
+     componentDidUpdate(prevProps, prevState) {
+          if (prevProps.currentData.id !== this.props.currentData.id) {
+               this.setState(this.props.currentData);
+          }
      }
      render() {
           const { name, location } = this.state;
           return (
-               <div>
-                    <form>
+               <div className="update-form-container">
+                    <h5>Update Agency information</h5>
+                    <form className="update-form">
                          <input
+                              className="input-box"
                               value={name}
                               type="text"
                               name="name"
                               onChange={this.handleInput}
                          />
                          <input
+                              className="input-box"
                               value={location}
                               type="text"
                               name="location"
                               onChange={this.handleInput}
                          />
                          <button
-                              className="button-primary"
+                              className="btn button-primary"
                               type="submit"
                               disabled={this.validateForm()}
-                              onSubmit={this.updateAgency}
+                              onClick={(e) => this.updateAgency(e)}
                          >
                               Update
                          </button>
-
+                         <button className="btn" onClick={this.props.cancelUpdate}>
+                              cancel
+                         </button>
                     </form>
                </div>
           );
      }
 }
 
-export default connect(null, updateAgencyData)(UpdateAgency)
+export default connect(null, { updateAgencyData })(UpdateAgency)

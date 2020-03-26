@@ -48,6 +48,13 @@ const Reducer = (state = initialState, action) => {
                     data: state.data.filter((agency) => agency.id !== action.payload)
                }
           case UPDATE_AGENCY_DATA:
+               let { id, updatedData } = action.payload
+               updatedData = { ...updatedData, id }
+               let updatedAgencies = state.data.map(agency => (agency.id === id ? updatedData : agency));
+
+               return {
+                    ...state, data: updatedAgencies
+               }
           default:
                return state;
      }

@@ -1,0 +1,16 @@
+.agency-list-item{
+     border-radius: 5px;
+     margin: 5px;
+     padding: 5px;
+     width: 25vw;
+     height: 200px;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+     background-color: rgb(248, 244, 244);
+}
+.agency-list-item:hover{
+     background-color: rgb(228, 228, 235);
+     
+}
