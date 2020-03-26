@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addAgency } from "../../Redux/actions/agencies";
-import "./addForm.style.scss";
+import { addAgency } from "../../../Redux/actions/agencies";
+import "./index.scss";
 
 const initialState = {
      name: "",

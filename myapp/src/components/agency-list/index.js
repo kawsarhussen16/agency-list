@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import Displaydata from "../display-data";
-import AddAgency from "./addForm";
+import Displaydata from "./display-data";
+import AddAgency from "./addform";
 import UpdateForm from "./updateForm";
-import "./agency-list.style.scss";
+import "./index.scss";
 import { addAgency, deleteAgencyData } from "../../Redux/actions/agencies";
 
 class AgencyList extends React.Component {

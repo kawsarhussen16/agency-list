@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { updateAgencyData } from "../../Redux/actions/agencies";
-import "./addForm.style.scss";
+import { updateAgencyData } from "../../../Redux/actions/agencies";
+
 class UpdateAgency extends Component {
      state = {
           name: "",
@@ -64,7 +64,7 @@ class UpdateAgency extends Component {
                          >
                               Update
                          </button>
-                         <button className="btn" onClick={this.props.cancelUpdate}>
+                         <button className="btn button-cancel" onClick={this.props.cancelUpdate}>
                               cancel
                          </button>
                     </form>

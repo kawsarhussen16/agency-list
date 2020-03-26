@@ -4,4 +4,21 @@
 
 .input-box, .btn{
   margin: 2px 10px;
+  color: black;
+}
+.btn.button-primary{
+  color: black;
+  background: rgb(23, 123, 156);
+}
+.btn.button-secondary{
+  background-color: rgb(221, 47, 47);
+}
+.btn.button-update{
+  background-color: grey;
+}
+.btn.button-cancel{
+  background: rgb(157, 211, 230);
+}
+.btn:hover{
+  color: white;
 }
