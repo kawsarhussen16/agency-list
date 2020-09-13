@@ -1,19 +1,19 @@
-.agency-list-item{
-     border-radius: 5px;
-     margin: 5px;
-     padding: 5px;
-     width: 25vw;
-     display: flex;
-     flex-direction: column;
-     justify-content: space-between;
-     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-     background-color: rgb(216, 204, 204);
-     .agency-list-title{
-          font-weight: bold;
-          font-size: larger;
-     }
+.agency-list-item {
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background-color: rgb(216, 204, 204);
+  border: 1px solid grey;
+  .agency-list-title {
+    font-weight: bold;
+    font-size: larger;
+  }
 }
-.agency-list-item:hover{
-     background-color: rgb(195, 195, 202);
-     
+.agency-list-item:hover {
+  background-color: rgb(195, 195, 202);
 }
